@@ -1,0 +1,8 @@
+node_modules/
+npm-debug.log*
+
+# secrets: kabhi commit mat karo
+.env
+.env.*
+!.env.example
+k8s/secrets.env

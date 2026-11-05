@@ -1,0 +1,11 @@
+# normal settings (password nahi!). password Secret mein jaata hai, jo kubectl se banta hai
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-config
+  namespace: demo
+data:
+  PORT: "3000"
+  APP_VERSION: "v1"
+  # "redis" = Service ka naam. Kubernetes DNS ise sahi IP pe le jaata hai
+  REDIS_URL: "redis://redis:6379"

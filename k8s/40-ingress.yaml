@@ -1,0 +1,19 @@
+# domain -> service. traefik ingress controller pehle install hona chahiye (Level 8)
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-app
+  namespace: demo
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: hello.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-app
+                port:
+                  number: 80
